@@ -1,0 +1,36 @@
+ mplayer -display :0.6 -vf crop=720:576:0:0 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null 
+
+ mplayer -display :0.6 -vf crop=430:540:430:0 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null
+ 
+  mplayer -display :0.6 -vf crop=430:540:860:0 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null 
+
+
+//nocrop
+ mplayer -display :0.6   -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null 
+
+
+//small thinkpad geometry
+mplayer -display :0.6   -noborder -geometry 1366x768 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null 
+
+//big thinkpad geometry
+mplayer -display :0.6   -noborder -geometry 1280x800 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null 
+
+//download video
+wget 192.168.1.2/Bunny.mp4 -O Videos/Bunny.mp4
+
+
+// split by 4
+//top left - thinkcenter1
+mplayer -display :0.6 -vf crop=640:360:0:0 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null
+
+//top right - thinkpad 3
+mplayer -display :0.6 -vf crop=640:360:640:0 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null
+
+//bottom left thinkpad1
+mplayer -display :0.6 -vf crop=640:360:0:360 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null
+ 
+//bottom right thinkpad2
+mplayer -display :0.6 -vf crop=640:360:640:360 -noborder -geometry 1920x1080 -udp-slave -udp-port 24800 Videos/Bunny.mp4 /dev/null
+
+//master
+ mplayer -display :0.5   -noborder -geometry 1920x1080 -loop 0 -udp-master -udp-ip 192.168.1.255 -udp-port 24800 Videos/Bunny.mp4
